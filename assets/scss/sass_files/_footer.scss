@@ -1,0 +1,114 @@
+footer {
+    padding: 72px 0 0;
+    background: rgba(200, 200, 200, 0.16);
+
+    a {
+        color: $color-primary;
+    }
+
+    .ftr-inner {
+        @include flex;
+        @include justify-content(center);
+
+        @include tablet {
+            @include flex-direction(column);
+        }
+
+        .ftr-block {
+            padding: 0 34px;
+
+            &:not(:last-child) {
+                @include tablet {
+                    margin-bottom: 30px;
+                }
+            }
+
+            @include mobile {
+                padding: 0;
+            }
+
+            h3 {
+                font-size: 12px;
+                line-height: 14px;
+                color: $color-primary;
+                opacity: 0.65;
+                margin-bottom: 20px;
+                font-weight: normal;
+            }
+
+            a {
+                font-size: 12px;
+                line-height: 14px;
+
+                &.logo {
+                    font-size: 18px;
+                    line-height: 21px;
+                }
+            }
+
+            &.contains-form {
+                h3 {
+                    opacity: 1;
+                    text-transform: uppercase;
+                    margin-bottom: 17px;
+                }
+
+                form {
+                    min-width: 350px;
+                    border: 1px solid $color-primary;
+                    @include flex;
+                    @include justify-content(space-between);
+
+                    @include placeholder {
+                        opacity: 0.43;
+                    }
+
+                    @include mobile {
+                        min-width: 100%;
+                    }
+
+                    input {
+                        height: 31px;
+                        font-size: 12px;
+                        color: $color-primary;
+                        padding: 0 10px;
+                        width: 100%;
+                        background: none;
+
+                        &[type="submit"] {
+                            padding: 0 20px;
+                            background: none;
+                            border-left: 1px solid $color-primary;
+                            cursor: pointer;
+                            min-width: 90px;
+                            width: auto;
+
+                            @include transition(0.2s, all, ease);
+
+                            &:hover {
+                                background: $color-primary;
+                                color: $color-white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .ftr-bottom {
+        background: #31414D;
+        margin-top: 67px;
+        padding: 11px 0 17px;
+
+        p {
+            font-size: 20px;
+            line-height: 23px;
+            color: $color-white;
+
+            @include mobile {
+                font-size: 15px;
+            }
+        }
+    }
+}
